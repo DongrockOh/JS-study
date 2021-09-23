@@ -74,3 +74,37 @@
 // player.lastName = "potato"; // lastName을 추가할 수도 있음.
 // player.points = player.points + 15; // 이처럼 추가할 수도 있음.
 // console.log(player);
+
+// ----------- #2.7-2.8 Functions
+// 반복해서 사용할 수 있는 코드조각.
+// function의경우 (){} 를 필수로 작성.
+
+//nameOfPerson,age = argument
+// function sayHello (nameOfPerson, age) {
+//   console.log("Hello my name is " + nameOfPerson + " and i'm " + age);
+// }
+// // sayHello(); // 함수 실행방법.
+// sayHello("nico", 10);
+// sayHello("dal", 23);
+// sayHello("lynn", 21);
+
+// function plus(a, b) {
+//   console.log(a + b);
+// }
+// function divide(a, b) {
+//   console.log( a / b);
+// }
+
+// plus(2, 3); // a = 2 , b = 3 => 2/3
+// divide(10, 2); // a=2 , b=2 => 10/2
+
+
+const player = {
+  name: "dr",
+  sayHello: function (otherPersonName) {
+    console.log("Hello " + otherPersonName + " nice to meet you");
+  },
+};
+console.log(player.name);
+player.sayHello("lynn");
+player.sayHello("nico");
