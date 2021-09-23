@@ -21,7 +21,7 @@
 // let something; // undefined
 // console.log(amIFat);
 
-// ------------- #2.5 Arrays 
+// ------------- #2.5 Arrays
 
 // const mon = "mon";
 // const tue = "tue";
@@ -41,11 +41,10 @@
 
 // -- Add one more day to the array -
 // daysOfWeek.push("sun"); // 배열 맨뒤에 "sun"을 추가
-// console.log(daysOfWeek); 
+// console.log(daysOfWeek);
 
 // const toBuy = ["potato", "tomato", "pizza"];
 // toBuy.push("kimbab");
-
 
 // ----------- #2.6 Objects
 // ++ 설명이 필요하지 않은 데이터 리스트는 array로
@@ -98,7 +97,6 @@
 // plus(2, 3); // a = 2 , b = 3 => 2/3
 // divide(10, 2); // a=2 , b=2 => 10/2
 
-
 // const player = {
 //   name: "dr",
 //   sayHello: function (otherPersonName) {
@@ -120,11 +118,80 @@
 // toBuy.push("meat"); ==> 배열 마지막에 "meat"가 추가됨.
 // console.log(toBuy);
 
-// -------------- #2.10 Recpa ||
-const player = {
-  name: "dongrock",
-  age: 29,
-}
-console.log(player);
-console.log(player.name); // 1-방식
-console.log(player["name"]); // 2-방식둘다 같음.
+// -------------- #2.10 Recap ||
+// Objects
+// const player = {
+//   name: "dongrock",
+//   age: 29,
+// };
+// console.log(player);
+// console.log(player.name); // 1-방식
+// console.log(player["name"]); // 2-방식둘다 같음.
+// player.sexy = "soon"; // sexy를 추가.
+// console.log(player);
+
+// function plus(a, b) {
+//   console.log(a + b);
+// }
+
+// plus(5, 10); // a=5 / b=10
+
+// -********* 계산기 숙제.
+// const calculator = {
+//   add: function (a, b) {
+//     console.log(a + b);
+//   },
+//   minus: function (a, b) {
+//     console.log(a - b);
+//   },
+//   div: function (a, b) {
+//     console.log(a / b);
+//   },
+//   multi: function (a, b) {
+//     console.log(a * b);
+//   },
+//   power: function (a, b) {
+//     console.log(a ** b); -- > 제곱
+//   },
+// };
+
+// calculator.add(1, 2);
+// calculator.minus(1, 2);
+// calculator.div(1, 2);
+// calculator.multi(1, 2);
+// calculator.power(1, 2);
+
+// ------------ #2.11 returns
+// const age = 96;
+// function calculateKrage(ageOfForeigner) {
+//   return ageOfForeigner + 2; // return 추가
+// }
+
+// // return 없이 실행하면 undefined 나옴.
+// const krAge = calculateKrage(age);
+
+// console.log(krAge);
+
+// const calculator = {
+//   add: function (a, b) {
+//     return a + b;
+//   },
+//   minus: function (a, b) {
+//     return a - b;
+//   },
+//   multi: function (a, b) {
+//     return a * b;
+//   },
+//   div: function (a, b) {
+//     return a / b;
+//   },
+//   power: function (a, b) {
+//     return a ** b;
+//   },
+// };
+
+// const plusResult = calculator.add(2, 3); // 5
+// const minusResult = calculator.minus(plusResult, 10); // -5
+// const multiResult = calculator.multi(10, minusResult); // -50
+// const divResult = calculator.div(multiResult, plusResult); // -10
+// const powerResult = calculator.power(divResult, minusResult);
