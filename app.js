@@ -99,12 +99,32 @@
 // divide(10, 2); // a=2 , b=2 => 10/2
 
 
+// const player = {
+//   name: "dr",
+//   sayHello: function (otherPersonName) {
+//     console.log("Hello " + otherPersonName + " nice to meet you");
+//   },
+// };
+// console.log(player.name);
+// player.sayHello("lynn");
+// player.sayHello("nico");
+
+// ----------- #2.9 ReCap (복습)
+// const 상수를 위주로 사용하나, 변경사항이 있을대는 let 을 사용
+// var는 절대 사용하지 말것 !!!
+// null - 값이 없음. /undefined - 값이 할당되어있지 않음.
+// const toBuy = ["a", "b", "c"];
+// console.log(toBuy);
+// toBuy[2] = "water"; ==> data 값 바꿈.
+// console.log(toBuy);
+// toBuy.push("meat"); ==> 배열 마지막에 "meat"가 추가됨.
+// console.log(toBuy);
+
+// -------------- #2.10 Recpa ||
 const player = {
-  name: "dr",
-  sayHello: function (otherPersonName) {
-    console.log("Hello " + otherPersonName + " nice to meet you");
-  },
-};
-console.log(player.name);
-player.sayHello("lynn");
-player.sayHello("nico");
+  name: "dongrock",
+  age: 29,
+}
+console.log(player);
+console.log(player.name); // 1-방식
+console.log(player["name"]); // 2-방식둘다 같음.
