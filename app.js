@@ -209,17 +209,50 @@
 //   조건 === false
 // }
     
-const age = parseInt(prompt("How old are you?")); // prompt 입력이 가능한 입력창이 뜸.css 수정 불가능 string
+// const age = parseInt(prompt("How old are you?")); // prompt 입력이 가능한 입력창이 뜸.css 수정 불가능 string
 
 // [ 조건문 ] 18세이하 술을 마실수 없다는 
-if(isNaN(age) || age < 0) { // 문자입력시 NaN(true), 숫자 입력시 parseInt 때문에 Str -> num 변환
-  console.log("Please write a real positive number");
-} else if(age < 18) { // 입력 숫자가 18세 미만일 경우 밑에 문구 표기 (ture)
-  console.log("You are too young");
-} else if(age >= 18 && age <= 50) { // 18 이상 &&(and) 50 이하일때 표기 // ||(or)
-  console.log("You can drink");
-} else if (age > 50 && age <= 80) { // 50 초과 80 이하 입력시 문자 표기
-  console.log("You should exerise");
-} else if (age > 80) { // 80초과일때 표기
-  console.log("You can do whatever you want.")
-}
+
+// if(isNaN(age) || age < 0) { // 문자입력시 NaN(true), 숫자 입력시 parseInt 때문에 Str -> num 변환
+//   console.log("Please write a real positive number");
+// } else if(age < 18) { // 입력 숫자가 18세 미만일 경우 밑에 문구 표기 (ture)
+//   console.log("You are too young");
+// } else if(age >= 18 && age <= 50) { // 18 이상 &&(and) 50 이하일때 표기 // ||(or)
+//   console.log("You can drink");
+// } else if (age > 50 && age <= 80) { // 50 초과 80 이하 입력시 문자 표기
+//   console.log("You should exerise");
+// } else if (age === 100) { // 80 이상일때도 같은 문구가 표기되기 때문에 순서를 조정해야한다.
+//   console.log("Wow you are wise")
+// } else if (age > 80) { // 80초과일때 표기
+//   console.log("You can do whatever you want.")
+// }
+
+// ---------- #3.0 The Document Objects
+//console.dir(document); --> document을 구성하고 있는 것을 볼 수 있다.
+// Javascript는 HTML을 접근하고 읽을 수 있고, 변경도 가능하다.
+// document.title = "Hi" -> html의 title 명을 변경할 수 있다.
+
+
+
+// ----------- #3.1 HTMl in javascript 
+// html내의 element를 js에서 가지고 올수도 있고, 변경할수도 있음.
+
+// const title = document.getElementById("title"); // getElementById - ID Tag를 불러올 때 사용
+
+// title.innerText = "got you!"; // title변수를 불러와서 본문의 내용(innerText)을 수정함.
+
+// console.log(title.id); // 변수 title의 지정되어 있는 id를 찾음.
+// console.log(title.className); // 변수 title의 지정되어 있는 className을 찾음.
+
+
+
+// ----------- #3.2 Searching For Elements
+// getElement - 불러오면 array(배열)형태로 불러옴.
+// const hellos = document.getElementsByClassName("hello"); // html class명을 찾는 함수
+// const title = document.getElementsByTagName("h1"); // h1의 태그를 찾는 함수
+
+// querySelector - element를 css 방식으로 불러옴 + 첫번째꺼만 불러옴.
+// querySelectorAll - elements를 css방식으로 불러옴 + 조건에 부합하는 전부를 불러옴.
+// const title = document.querySelector(".hello h1"); // class명 hello 안에 있는 h1을 찾는 함수
+// const title = document.querySelector(".hello h1:first-child"); // class명 hello 안에 있는 h1 첫번째를 찾는 함수
+// const title = document.querySelector("#hello"); // id명이 hello인것을 찾음.
