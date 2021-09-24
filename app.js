@@ -201,17 +201,16 @@
 //inNaN() -> NaN인지 확인 후 rreturn함으로 boolean type으로 알려줌
 // console.log(age, parseInt(age)); age - string / parseInt(age) - Number
 
-
 // -----------조건문의 기본 if else문
 // if(조건) {
 //   조건 === true
 // } else {
 //   조건 === false
 // }
-    
+
 // const age = parseInt(prompt("How old are you?")); // prompt 입력이 가능한 입력창이 뜸.css 수정 불가능 string
 
-// [ 조건문 ] 18세이하 술을 마실수 없다는 
+// [ 조건문 ] 18세이하 술을 마실수 없다는
 
 // if(isNaN(age) || age < 0) { // 문자입력시 NaN(true), 숫자 입력시 parseInt 때문에 Str -> num 변환
 //   console.log("Please write a real positive number");
@@ -232,9 +231,7 @@
 // Javascript는 HTML을 접근하고 읽을 수 있고, 변경도 가능하다.
 // document.title = "Hi" -> html의 title 명을 변경할 수 있다.
 
-
-
-// ----------- #3.1 HTMl in javascript 
+// ----------- #3.1 HTMl in javascript
 // html내의 element를 js에서 가지고 올수도 있고, 변경할수도 있음.
 
 // const title = document.getElementById("title"); // getElementById - ID Tag를 불러올 때 사용
@@ -243,8 +240,6 @@
 
 // console.log(title.id); // 변수 title의 지정되어 있는 id를 찾음.
 // console.log(title.className); // 변수 title의 지정되어 있는 className을 찾음.
-
-
 
 // ----------- #3.2 Searching For Elements
 // getElement - 불러오면 array(배열)형태로 불러옴.
@@ -257,52 +252,126 @@
 // const title = document.querySelector(".hello h1:first-child"); // class명 hello 안에 있는 h1 첫번째를 찾는 함수
 // const title = document.querySelector("#hello"); // id명이 hello인것을 찾음.
 
-
-
 // ----------- #3.3-3.5 Events
 // console.dir(title); -> 실행시 on이 붙은건 event listener
 
-const h1 = document.querySelector(".hello h1");
-// title.style.color = "blue"; // title의 style color를 변경할 수 있다.
+// const h1 = document.querySelector(".hello h1");
+// // title.style.color = "blue"; // title의 style color를 변경할 수 있다.
 
-function handleTitleClick() { // click 함수 생성
-  h1.style.color = "blue"
-}
+// function handleTitleClick() {
+//   // click 함수 생성
+//   h1.style.color = "blue";
+// }
 
-function handleMouseEnter() { // mouseenter 함수 생성
-  h1.innerText = "Mouse is here"
-}
+// function handleMouseEnter() {
+//   // mouseenter 함수 생성
+//   h1.innerText = "Mouse is here";
+// }
 
-function handleMouseLeave() { // mouseleave 함수 생성
-  h1.innerText = "Mouse is gone!"
-}
+// function handleMouseLeave() {
+//   // mouseleave 함수 생성
+//   h1.innerText = "Mouse is gone!";
+// }
 
-function handleWindowResize () { // resize 함수 생성
-  document.body.style.backgroundColor =  "tomato";
-}
+// function handleWindowResize() {
+//   // resize 함수 생성
+//   document.body.style.backgroundColor = "tomato";
+// }
 
-function handleWindowCopy () { // copy 함수 생성
-  alert("copier!");
-}
+// function handleWindowCopy() {
+//   // copy 함수 생성
+//   alert("copier!");
+// }
 
-function handleWindowOffline () { // offline 함수 생성
-  alert("SOS no WIFI");
-}
+// function handleWindowOffline() {
+//   // offline 함수 생성
+//   alert("SOS no WIFI");
+// }
 
-function handleWindowOnline () { // online 함수 생성
-  alerrt("all good!!")
-}
+// function handleWindowOnline() {
+//   // online 함수 생성
+//   alerrt("all good!!");
+// }
 
-// addEventListener과 on 방식 둘다 가능하다. 
+// addEventListener과 on 방식 둘다 가능하다.
 // 하지만 addEvent를 선호하는 이유는 remove를 이용하여 event 제거도 가능하기 때문이다.
 
 // h1.onclick = handleTitleClick; // addEventListener과 동일함.
-h1.addEventListener("click", handleTitleClick); // 이벤트 추가, 클릭하면 handleTitleClick 함수가 실행
-h1.addEventListener("mouseenter", handleMouseEnter) // mouseenter 마우스 이벤트 추가
-h1.addEventListener("mouseleave", handleMouseLeave) // mouseeleave 마우스 이벤트 추가
+// h1.addEventListener("click", handleTitleClick); // 이벤트 추가, 클릭하면 handleTitleClick 함수가 실행
+// h1.addEventListener("mouseenter", handleMouseEnter) // mouseenter 마우스 이벤트 추가
+// h1.addEventListener("mouseleave", handleMouseLeave) // mouseeleave 마우스 이벤트 추가
 
-window.addEventListener("resize", handleWindowResize); // window에 resize 이벤트 추가
-window.addEventListener("copy", handleWindowCopy); // window에 copy 이벤트 추가
-window.addEventListener("offline", handleWindowOffline); // window에 인터넷 offline 이벤트 추가
-window.addEventListener("online", handleWindowOnline); // window에 인터넷 online 이벤트 추가
+// window.addEventListener("resize", handleWindowResize); // window에 resize 이벤트 추가
+// window.addEventListener("copy", handleWindowCopy); // window에 copy 이벤트 추가
+// window.addEventListener("offline", handleWindowOffline); // window에 인터넷 offline 이벤트 추가
+// window.addEventListener("online", handleWindowOnline); // window에 인터넷 online 이벤트 추가
 
+// ----------------# 3.6 CSS in javascript part -1
+// css style 변경은 CSS 파일에서 하는 것이 좋다.
+
+// step 1. element를 찾아라
+// step 2. event를 listen 해라
+// step 3. 그 event에 반응해라.
+
+// const h1 = document.querySelector(".hello h1");
+
+// function handleTitleClick() {
+//   const currentColor = h1.style.color;
+//   let newColor;
+//   if (currentColor === "blue") {
+//     newColor = "tomato";
+//   } else {
+//     newColor = "blue";
+//   }
+//   h1.style.color = newColor;
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+// ----------------# 3.7 CSS in javascript part -2
+
+// const h1 = document.querySelector(".hello h1");
+
+// // css에 미리 active 클래스명을 삽입한 후에 클릭할때 active 클래스명을 만들어줌.
+// // 반복되는 string이 있을때(raw value)는 변수로 선언하여 사용하는게 에러발생 확률이 낮다
+
+// //[버그] 기존의 class명이 있음에도 그걸 무시하고 새로 만들어지는 버그가 잇음
+// function handleTitleClick() {
+//   const clickedClass = "clicked";
+//   if (h1.className === clickedClass) {
+//     // 클래스명이 active일때 ""(tomato) 입력
+//     h1.className = "";
+//   } else {
+//     // 클래스명이 "" 일때 active(blue) 입력.
+//     h1.className = clickedClass;
+//   }
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+// ----------------# 3.8 CSS in javascript part -3
+// className = class전체를 바꿈 // classList = class 일부를 바꿈
+
+// const h1 = document.querySelector(".hello h1");
+
+// function handleTitleClick() {
+//   const clickedClass = "clicked";
+//   if (h1.classList.contains(clickedClass)) {
+//     h1.classList.remove(clickedClass);
+//   } else {
+//     h1.classList.add(clickedClass);
+//   }
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+////////////////toggle ////////
+
+const h1 = document.querySelector(".hello h1");
+
+function handleTitleClick() {
+  h1.classList.toggle("clicked");
+  // toggle (class명)
+}
+
+h1.addEventListener("click", handleTitleClick);
