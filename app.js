@@ -195,3 +195,31 @@
 // const multiResult = calculator.multi(10, minusResult); // -50
 // const divResult = calculator.div(multiResult, plusResult); // -10
 // const powerResult = calculator.power(divResult, minusResult);
+
+// --------------#2.13-15 Conditionals 조건문
+//parseInt - string -> number 변환
+//inNaN() -> NaN인지 확인 후 rreturn함으로 boolean type으로 알려줌
+// console.log(age, parseInt(age)); age - string / parseInt(age) - Number
+
+
+// -----------조건문의 기본 if else문
+// if(조건) {
+//   조건 === true
+// } else {
+//   조건 === false
+// }
+    
+const age = parseInt(prompt("How old are you?")); // prompt 입력이 가능한 입력창이 뜸.css 수정 불가능 string
+
+// [ 조건문 ] 18세이하 술을 마실수 없다는 
+if(isNaN(age) || age < 0) { // 문자입력시 NaN(true), 숫자 입력시 parseInt 때문에 Str -> num 변환
+  console.log("Please write a real positive number");
+} else if(age < 18) { // 입력 숫자가 18세 미만일 경우 밑에 문구 표기 (ture)
+  console.log("You are too young");
+} else if(age >= 18 && age <= 50) { // 18 이상 &&(and) 50 이하일때 표기 // ||(or)
+  console.log("You can drink");
+} else if (age > 50 && age <= 80) { // 50 초과 80 이하 입력시 문자 표기
+  console.log("You should exerise");
+} else if (age > 80) { // 80초과일때 표기
+  console.log("You can do whatever you want.")
+}
