@@ -228,7 +228,7 @@
 // }
 
 // ---------- #3.0 The Document Objects
-//console.dir(document); --> document을 구성하고 있는 것을 볼 수 있다.
+//console.dir(document); --> document안에  element 구성하고 있는 것을 볼 수 있다.
 // Javascript는 HTML을 접근하고 읽을 수 있고, 변경도 가능하다.
 // document.title = "Hi" -> html의 title 명을 변경할 수 있다.
 
@@ -256,3 +256,53 @@
 // const title = document.querySelector(".hello h1"); // class명 hello 안에 있는 h1을 찾는 함수
 // const title = document.querySelector(".hello h1:first-child"); // class명 hello 안에 있는 h1 첫번째를 찾는 함수
 // const title = document.querySelector("#hello"); // id명이 hello인것을 찾음.
+
+
+
+// ----------- #3.3-3.5 Events
+// console.dir(title); -> 실행시 on이 붙은건 event listener
+
+const h1 = document.querySelector(".hello h1");
+// title.style.color = "blue"; // title의 style color를 변경할 수 있다.
+
+function handleTitleClick() { // click 함수 생성
+  h1.style.color = "blue"
+}
+
+function handleMouseEnter() { // mouseenter 함수 생성
+  h1.innerText = "Mouse is here"
+}
+
+function handleMouseLeave() { // mouseleave 함수 생성
+  h1.innerText = "Mouse is gone!"
+}
+
+function handleWindowResize () { // resize 함수 생성
+  document.body.style.backgroundColor =  "tomato";
+}
+
+function handleWindowCopy () { // copy 함수 생성
+  alert("copier!");
+}
+
+function handleWindowOffline () { // offline 함수 생성
+  alert("SOS no WIFI");
+}
+
+function handleWindowOnline () { // online 함수 생성
+  alerrt("all good!!")
+}
+
+// addEventListener과 on 방식 둘다 가능하다. 
+// 하지만 addEvent를 선호하는 이유는 remove를 이용하여 event 제거도 가능하기 때문이다.
+
+// h1.onclick = handleTitleClick; // addEventListener과 동일함.
+h1.addEventListener("click", handleTitleClick); // 이벤트 추가, 클릭하면 handleTitleClick 함수가 실행
+h1.addEventListener("mouseenter", handleMouseEnter) // mouseenter 마우스 이벤트 추가
+h1.addEventListener("mouseleave", handleMouseLeave) // mouseeleave 마우스 이벤트 추가
+
+window.addEventListener("resize", handleWindowResize); // window에 resize 이벤트 추가
+window.addEventListener("copy", handleWindowCopy); // window에 copy 이벤트 추가
+window.addEventListener("offline", handleWindowOffline); // window에 인터넷 offline 이벤트 추가
+window.addEventListener("online", handleWindowOnline); // window에 인터넷 online 이벤트 추가
+
