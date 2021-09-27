@@ -7,11 +7,10 @@ const USERNAME_KEY = "username"
 
 //preventDefault - 브라우저의 기본동작을 막아줌.
 function onLoginSubmit(event) {
-  event.preventDefault(); // 기본동작을 막음.
-  loginForm.classList.add(HIDDEN_CLASSNAME); // form에 hidden class 추가
-  const username = loginInput.value; // input값을 username에 변수에 저장
-  localStorage.setItem(USERNAME_KEY, username); // setItem(저장)("username"(key),username(변수))
-  // greeting.innerText = "Hello " + username;
+  event.preventDefault(); 
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  const username = loginInput.value;
+  localStorage.setItem(USERNAME_KEY, username);
   paintGreetings(username);
 }
 
