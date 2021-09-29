@@ -198,7 +198,7 @@
 
 // --------------#2.13-15 Conditionals 조건문
 //parseInt - string -> number 변환
-//inNaN() -> NaN인지 확인 후 rreturn함으로 boolean type으로 알려줌
+//inNaN() -> NaN인지 확인 후 return함으로 boolean type으로 알려줌
 // console.log(age, parseInt(age)); age - string / parseInt(age) - Number
 
 // -----------조건문의 기본 if else문
