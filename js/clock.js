@@ -6,8 +6,8 @@ function getClock() {
   // 문자열로 변환하며, padStart - 2자리의 수를 가지게 해줌 ex) 1s -> 01s
   const hours = String(date.getHours()).padStart(2, "0");
   const minutes = String(date.getMinutes()).padStart(2, "0");
-  const seconds = String(date.getSeconds()).padStart(2, "0");
-  clock.innerText = `${hours}:${minutes}:${seconds}`; // 위에 변수 설정 된 것을 표기
+  // const seconds = String(date.getSeconds()).padStart(2, "0");
+  clock.innerText = `${hours} : ${minutes}`; // 위에 변수 설정 된 것을 표기
 }
 
 getClock(); // 함수 실행

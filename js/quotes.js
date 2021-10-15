@@ -54,5 +54,5 @@ const author = document.querySelector("#quote span:last-child");
 // Math.round()->반올림 .ceil -> 올림 .floor -> 버림
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-quote.innerText = todaysQuote.quote;
-author.innerText = todaysQuote.author;
+quote.innerText = `"${todaysQuote.quote}"`;
+author.innerText = `- ${todaysQuote.author}`;
