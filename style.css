@@ -34,9 +34,19 @@ input {
   background-color: transparent;
   color: white;
 }
+#login-form > input:last-child {
+  border: none;
+  font-size: 32px;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+}
 
 input:focus {
   outline: none;
+}
+input::placeholder {
+  color: #fff;
 }
 
 #clock {
@@ -72,4 +82,25 @@ input:focus {
 }
 #todo-form label {
   font-size: 45px;
+}
+#todo-form__list {
+  margin-top: 10px;
+}
+
+li {
+  list-style: none;
+  width: 100px;
+  text-align: center;
+  font-size: 22px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+li:focus {
+  text-decoration: underline;
+}
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
 }

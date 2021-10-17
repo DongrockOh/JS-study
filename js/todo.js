@@ -34,9 +34,16 @@ function paintToDo(newTodo) {
   const button = document.createElement("button"); // btn 생성
   button.innerText = "❌"; // 생성된 btn에 X 입력
   button.addEventListener("click", deleteToDo); // btn 클릭시 Todo List 항목을 제거하는 함수
+  li.addEventListener("click", listCheck);
   li.appendChild(span); // li의 자식 span
   li.appendChild(button); // li의 자식 btn / li > span = btn
   toDoList.appendChild(li); // ul#todo-list의 자식 li
+}
+
+function listCheck(event) {
+  const li = event.target.parentElement;
+  li.style.textDecoration = "line-through";
+  li.style.textDecorationColor = "#ff0000";
 }
 
 // input에 작성하는 Todo List를 저장하는 함수
