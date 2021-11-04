@@ -5,7 +5,7 @@ function onGeoOk(position) {
   const lat = position.coords.latitude; // 위도
   const lon = position.coords.longitude; // 경도
   // api 호출 사이트
-  const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
 
   // url을 fetch하고 그 다음으로 response을 받고 response의 json을 얻음
   fetch(url)
